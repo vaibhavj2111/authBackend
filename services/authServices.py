@@ -24,7 +24,7 @@ class AuthService:
 
             return{"message": "User registered successfully"}
 
-        except SQLAlchemyError as e:g
+        except SQLAlchemyError as e:
             self.db.rollback()
             raise HTTPException(status_code=400, detail="ErrorSQL registering user")
 
